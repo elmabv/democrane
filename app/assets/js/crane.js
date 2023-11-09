@@ -38,8 +38,8 @@ Web.on('loaded', async event => {
       $('div').append(
       ),
       $('div').append(
-        $('div').text(new Date().toLocaleDateString()),
-        $('div').text(new Date().toLocaleTimeString()),
+        $('div'),
+        $('div'),
       ),
     ),
     $('main').append(
@@ -48,34 +48,34 @@ Web.on('loaded', async event => {
           $('div').class('field').append(
             $('label').text('Target Pos X'),
             $('input').name('elmabv/democrane/axis/x').type('number').min(0).max(10).value(0).on('change', e => setValue(e.target.name, e.target.value)),
-            $('span'),
+            $('span').text('pos'),
           ),
           $('div').class('field').append(
             $('label').text('Target Pos Y'),
             $('input').name('elmabv/democrane/axis/y').type('number').min(0).max(4).value(0).on('change', e => setValue(e.target.name, e.target.value)),
-            $('span'),
+            $('span').text('pos'),
           ),
           $('div').class('field').append(
             $('label').text('Target Pos Z'),
             $('input').name('elmabv/democrane/axis/z').type('number').min(0).max(3).value(0).on('change', e => setValue(e.target.name, e.target.value)),
-            $('span'),
+            $('span').text('pos'),
           ),
         ),
         $('div').class('fields').append(
           $('div').class('field').append(
             $('label').text('Crane Pos X'),
             $('input').name('elmabv/democrane/actual/x').type('number').min(0).max(9999).readonly(true),
-            $('span').text('px'),
+            $('span').text('mm'),
           ),
           $('div').class('field').append(
             $('label').text('Crane Pos Y'),
             $('input').name('elmabv/democrane/actual/y').type('number').min(0).max(9999).readonly(true),
-            $('span').text('px'),
+            $('span').text('mm'),
           ),
           $('div').class('field').append(
             $('label').text('Crane Pos Z'),
             $('input').name('elmabv/democrane/actual/z').type('number').min(0).max(9999).readonly(true),
-            $('span').text('px'),
+            $('span').text('mm'),
           ),
         ),
       ),
