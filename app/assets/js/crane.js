@@ -47,17 +47,17 @@ Web.on('loaded', async event => {
         $('div').class('fields').append(
           $('div').class('field').append(
             $('label').text('Target Pos X'),
-            $('input').name('elmabv/democrane/axis/x').type('number').min(0).max(10).value(0).on('change', e => setValue(e.target.name, e.target.value)),
+            $('input').name('elmabv/democrane/axis/x').type('number').pattern('[0-9]*').min(0).max(10).value(0).on('change', e => setValue(e.target.name, e.target.value)),
             $('span').text('pos'),
           ),
           $('div').class('field').append(
             $('label').text('Target Pos Y'),
-            $('input').name('elmabv/democrane/axis/y').type('number').min(0).max(4).value(0).on('change', e => setValue(e.target.name, e.target.value)),
+            $('input').name('elmabv/democrane/axis/y').type('number').pattern('[0-9]*').min(0).max(4).value(0).on('change', e => setValue(e.target.name, e.target.value)),
             $('span').text('pos'),
           ),
           $('div').class('field').append(
             $('label').text('Target Pos Z'),
-            $('input').name('elmabv/democrane/axis/z').type('number').min(0).max(3).value(0).on('change', e => setValue(e.target.name, e.target.value)),
+            $('input').name('elmabv/democrane/axis/z').type('number').pattern('[0-9]*').min(0).max(3).value(0).on('change', e => setValue(e.target.name, e.target.value)),
             $('span').text('pos'),
           ),
         ),
