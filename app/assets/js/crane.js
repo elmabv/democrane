@@ -64,17 +64,17 @@ Web.on('loaded', async event => {
         $('div').class('fields').append(
           $('div').class('field').append(
             $('label').text('Crane Pos X'),
-            $('input').name('elmabv/democrane/actual/x').type('number').min(0).max(9999).readonly(true),
+            $('input').name('elmabv/democrane/actual/x').type('number').min(0).max(9999).disabled(true),
             $('span').text('mm'),
           ),
           $('div').class('field').append(
             $('label').text('Crane Pos Y'),
-            $('input').name('elmabv/democrane/actual/y').type('number').min(0).max(9999).readonly(true),
+            $('input').name('elmabv/democrane/actual/y').type('number').min(0).max(9999).disabled(true),
             $('span').text('mm'),
           ),
           $('div').class('field').append(
             $('label').text('Crane Pos Z'),
-            $('input').name('elmabv/democrane/actual/z').type('number').min(0).max(9999).readonly(true),
+            $('input').name('elmabv/democrane/actual/z').type('number').min(0).max(9999).disabled(true),
             $('span').text('mm'),
           ),
         ),
