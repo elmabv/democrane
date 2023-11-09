@@ -32,27 +32,67 @@ Web.on('loaded', async event => {
     mqttClient.send(message);
   }
   $(document.body).append(
-    $('nav').append(
-      $('button').text('Stop').on('click', e => setValue('elmabv/democrane/state', 0)),
-      $('button').text('Start').on('click', e => setValue('elmabv/democrane/state', 1)),
-      $('button').text('Put').on('click', e => setValue('elmabv/democrane/state', 'put')),
-      $('button').text('Get').on('click', e => setValue('elmabv/democrane/state', 'get')),
+    $('header').append(
+      $('div').append(
+      ),
+      $('div').append(
+      ),
+      $('div').append(
+        $('div').text(new Date().toLocaleDateString()),
+        $('div').text(new Date().toLocaleTimeString()),
+      ),
     ),
-    $('div').append(
-      $('label').text('Target Pos X'),
-      $('input').name('elmabv/democrane/axis/x').type('number').min(0).max(10).value(0).on('change', e => setValue(e.target.name, e.target.value)),
-      $('label').text('Target Pos Y'),
-      $('input').name('elmabv/democrane/axis/y').type('number').min(0).max(4).value(0).on('change', e => setValue(e.target.name, e.target.value)),
-      $('label').text('Target Pos Z'),
-      $('input').name('elmabv/democrane/axis/z').type('number').min(0).max(3).value(0).on('change', e => setValue(e.target.name, e.target.value)),
+    $('main').append(
+      $('div').append(
+        $('div').class('fields').append(
+          $('div').class('field').append(
+            $('label').text('Target Pos X'),
+            $('input').name('elmabv/democrane/axis/x').type('number').min(0).max(10).value(0).on('change', e => setValue(e.target.name, e.target.value)),
+            $('span'),
+          ),
+          $('div').class('field').append(
+            $('label').text('Target Pos Y'),
+            $('input').name('elmabv/democrane/axis/y').type('number').min(0).max(4).value(0).on('change', e => setValue(e.target.name, e.target.value)),
+            $('span'),
+          ),
+          $('div').class('field').append(
+            $('label').text('Target Pos Z'),
+            $('input').name('elmabv/democrane/axis/z').type('number').min(0).max(3).value(0).on('change', e => setValue(e.target.name, e.target.value)),
+            $('span'),
+          ),
+        ),
+        $('div').class('fields').append(
+          $('div').class('field').append(
+            $('label').text('Crane Pos X'),
+            $('input').name('elmabv/democrane/actual/x').type('number').min(0).max(9999).readonly(true),
+            $('span').text('px'),
+          ),
+          $('div').class('field').append(
+            $('label').text('Crane Pos Y'),
+            $('input').name('elmabv/democrane/actual/y').type('number').min(0).max(9999).readonly(true),
+            $('span').text('px'),
+          ),
+          $('div').class('field').append(
+            $('label').text('Crane Pos Z'),
+            $('input').name('elmabv/democrane/actual/z').type('number').min(0).max(9999).readonly(true),
+            $('span').text('px'),
+          ),
+        ),
+      ),
+      $('nav').append(
+        $('button').text('Put').on('click', e => setValue('elmabv/democrane/state', 'put')),
+        $('button').text('Get').on('click', e => setValue('elmabv/democrane/state', 'get')),
+      ),
     ),
-    $('div').append(
-      $('label').text('Crane Pos X'),
-      $('input').name('elmabv/democrane/actual/x').type('number').readonly(true),
-      $('label').text('Crane Pos Y'),
-      $('input').name('elmabv/democrane/actual/y').type('number').readonly(true),
-      $('label').text('Crane Pos Z'),
-      $('input').name('elmabv/democrane/actual/z').type('number').readonly(true),
+    $('footer').append(
+      $('nav').class('elma').append(
+        $('button').text('Stop').on('click', e => setValue('elmabv/democrane/state', 0)),
+        $('button').text('Start').on('click', e => setValue('elmabv/democrane/state', 1)),
+      ),
     ),
-  )
+  );
+  setInterval(() => {
+    $('header>div:last-child>:first-child').text(new Date().toLocaleDateString());
+    $('header>div:last-child>:last-child').text(new Date().toLocaleTimeString());
+  }, 1000)
 });
