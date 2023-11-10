@@ -70,11 +70,11 @@ Web.on('loaded', async event => {
     light.position.set(0,5000,-5000);
     holder.add(light);
 
-    const [depth,width,height] = [6060,2430,2590];
+    const [depth,width,height] = [6060,2440,2590];
     // const [depth,width,height] = [6100,2500,2600];
 
     var [maxY,maxZ,maxX] = [5,5,50];
-    var [maxY,maxZ,maxX] = [3,3,10];
+    var [maxY,maxZ,maxX] = [5,5,15];
     for (var posy = 20, y = 0; y<=maxY+1; y++, posy += height) {
       indexpos[y] = [];
       for (var posz = 4000,z = 0; z<=maxZ; z++, posz += depth+200) {
@@ -86,7 +86,7 @@ Web.on('loaded', async event => {
     }
     console.log({posx,posy,posz});
 
-    var floorGeometry = new THREE.PlaneGeometry(posx, posz, 0, 0);
+    var floorGeometry = new THREE.PlaneGeometry(20000, 15000, 0, 0);
     var floor = new THREE.Mesh(floorGeometry, floorMaterial);
     floor.rotation.x = -Math.PI / 2;
     holder.add(floor);
