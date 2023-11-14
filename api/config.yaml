@@ -1,0 +1,8 @@
+democrane:
+  floor:
+    width: 48000 # 15000*32
+    length: 64000 ## 20000*32
+    height: 20000
+  size:
+    x: 20000
+    y: 15000

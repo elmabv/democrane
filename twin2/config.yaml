@@ -1,0 +1,30 @@
+stockpos1:
+  - &containerStock
+    nr: 11
+    depth: 6060
+    height: 2590
+    width: 2430
+    posx: 500
+    posy: 0
+    posz: 12300
+  - nr: 12
+    <<: *containerStock
+    posx: 3000
+  - nr: 13
+    <<: *containerStock
+    posx: 5500
+  - nr: 14
+    <<: *containerStock
+    posx: 8000
+  - nr: 15
+    <<: *containerStock
+    posx: 10500
+  - nr: 16
+    <<: *containerStock
+    posx: 13000
+  - nr: 17
+    <<: *containerStock
+    posx: 15500
+  - nr: 18
+    <<: *containerStock
+    posx: 18000
