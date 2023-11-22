@@ -175,6 +175,7 @@ Web.on('loaded', async event => {
       ),
       $('nav').append(
         $('button').text('Goto').on('click', e => Aim.setValue('elmabv/democrane/plc/state', 'goto')),
+        $('button').text('Test1').on('click', e => Aim.setValue('elmabv/democrane/plc/state', 'test1')),
         // $('button').text('Put').on('click', e => Aim.setValue('elmabv/democrane/state', 'put')),
         // $('button').text('Get').on('click', e => Aim.setValue('elmabv/democrane/state', 'get')),
       ),
