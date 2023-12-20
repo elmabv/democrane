@@ -142,12 +142,13 @@ Web.on('loaded', async event => {
     container.moveto(freeindex);
   }
 
+
+  // document.body.innerHTML = `<p>Hallo</p>`;
+
   $(document.body).append(
     $('header').append(
-      $('div').append(
-      ),
-      $('div').append(
-      ),
+      $('div').append(),
+      $('div').append(),
       $('div').append(
         $('div'),
         $('div'),
@@ -242,6 +243,7 @@ Web.on('loaded', async event => {
     ),
   );
 
+  // 
   Aim.goto = function(pos) {
     const {posx,posy,posz} = pos;
     console.log({posx,posy,posz});
@@ -404,7 +406,9 @@ Web.on('loaded', async event => {
         console.error("connection lost: " + responseObject.errorMessage);
       };
       mqttClient.onMessageArrived = async function (message) {
+
         document.body.querySelectorAll(`input[name="${message.destinationName}"]`).forEach(el => el.value = message.payloadString);
+
         switch (message.destinationName) {
           case 'elmabv/democrane/plc/axisx/pos': return crane.movex(Number(message.payloadString));
           case 'elmabv/democrane/plc/axisy/pos': return crane.movey(Number(message.payloadString));
