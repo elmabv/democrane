@@ -6,7 +6,7 @@
   "description": "Elma Demonstration Crane",
   "display": "fullscreen",
   "background_color": "#000",
-  "start_url": "/democrane/app/index.html",
+  "start_url": "/democrane/cms/app/index.html",
   "scope": "/",
   "version": "1",
   "permissions": [ ],

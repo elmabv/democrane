@@ -410,9 +410,9 @@ Web.on('loaded', async event => {
         document.body.querySelectorAll(`input[name="${message.destinationName}"]`).forEach(el => el.value = message.payloadString);
 
         switch (message.destinationName) {
-          case 'elmabv/democrane/plc/axisx/pos': return crane.movex(Number(message.payloadString));
-          case 'elmabv/democrane/plc/axisy/pos': return crane.movey(Number(message.payloadString));
-          case 'elmabv/democrane/plc/axisz/pos': return crane.movez(Number(message.payloadString));
+          case 'elmabv/democrane/plc/axisx/pos': return crane.movex(Number(message.payloadString)*32);
+          case 'elmabv/democrane/plc/axisy/pos': return crane.movey(Number(message.payloadString)*32);
+          case 'elmabv/democrane/plc/axisz/pos': return crane.movez(Number(message.payloadString)*32);
           case 'elmabv/democrane/plc/state': {
             switch (message.payloadString) {
               case 'success': return Aim.success();
