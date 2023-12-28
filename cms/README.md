@@ -1,10 +1,28 @@
+# Elma Democrane POC Inleiding
 
+Dit is de software nodig voor de Elma Demonstration Crane. Dit is een 1e versie welke dienst doet als Proof of Concept.
 
+## Container Management System Software
 
-# CMS
+![CMS visualisatie](/democrane/images/democrane-cms1.png)
 
-- [Democrane CMS](https://elmabv.aliconnect.nl/democrane/cms/index.html)
-- [Democrane CMS App](https://elmabv.aliconnect.nl/democrane/cms/app/index.html)
+De demo crane opstelling bestaat uit een Container Management System (CMS) voor het beheer van de containers binnen het werkgebied van de kraan. Deze web webapplicatie draait in de cloud. De CMS applicatie wordt [hier](cms/index.html) gestart.
+
+## Container Management System App
+
+Voor het plaatsen en ophalen van een container wordt gebruik gemaakt van een webapp. De webapp wordt [hier](cms/app/index.html) gestart.
+
+## MQTT LAN Server
+
+Binnen het industrial LAN van de kraan bevindt zich een MQTT server die de communicatie verzorgt tussen de PLC en dfe message broker. Op deze server is nodejs geinstalleerd en de [MQTT server applicatie](https://github.com/elmabv/democrane/tree/main/mqtt-server)
+
+## MQTT Message Broker
+
+Binnen het industrial LAN van de kraan bevindt zich een message broker. De PC met de message broker en/of MQTT LAN Server is via UTP verbonden met het LAN en via Wifi met het WAN. Deze Message Broker verzorgt de communicatie tussen het CMS in de cloud/WAN en de PLC in het LAN. De broker wordt gestart door het opstarten van het bestand `democrane/local-server/local-server.html`.
+
+## PLC Crane Software
+
+De PLC software is opgebouwd met TIA en draait op een Siemens 1500.
 
 # MQTT topics:
 
@@ -109,4 +127,3 @@
     1. CMS > `elmabv/democrane/server/plc/command` = 1 (Start)
     1. PLC > `elmabv/democrane/plc/state` = 2: Running
     1. PLC > `elmabv/democrane/plc/state` = 3: Complete
-
