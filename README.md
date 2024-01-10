@@ -81,6 +81,11 @@ De PLC software is opgebouwd met TIA en draait op een Siemens 1500.
 
 # Init
 
+
+    1. `3461241` = 1
+
+
+
 1. CMS
     1. `elmabv/democrane/state` = 1    
     1. `elmabv/democrane/plc/command` = 0
