@@ -2,6 +2,21 @@
 
 Dit is de software nodig voor de Elma Demonstration Crane. Dit is een 1e versie welke dienst doet als Proof of Concept.
 
+## Opstarten vanuit Elma
+
+Om mee te werken aan de demo crane voer je de volgende acties uit
+
+1. Maak een GitHub account (als je dat nog niet hebt). Wij adviseren een account aan te maken met je persoonlijke privé email adres. Je GitHub account is een persoonlijk account gekoppeld aan jou als persoon. Na het beindigen van je dienstverband bij Elma kan je Elma email adres onbereikbaar zijn.
+1. Geef je GitHub accountnaam door aan de beheerder bij Elma. Deze zal je toevoegen als **Member** aan **People** binnen https://github.com/elmabv
+1. Installeer GitHub Desktop [desktop.github.com](https://desktop.github.com) op je PC van Elma. Heb je niet genoeg rechten vraag dan ondersteuning aan bij Elma IT.
+1. Voeg de repository `elmabv/democrane` toe op je HDD van je PC. Wij adviseren deze te plaatsen in de folder `C:\aliconnect\public\elmabv\democrane`
+1. Installeer de Code Editor `Visual Studio Code` van [code.visualstudio.com](https://code.visualstudio.com).
+1. Open Folder `C:\aliconnect\public\elmabv\democrane` in je Code Editor.
+1. Installeer TIA Portal v18 op je PC
+1. Ga naar project `C:\Users\...\Elma BV\Studenten - Documenten\Demo kraan\ElmaDemoKraan_MQTT`
+1. Stel de folder in met de optie `Altijd behuden op dit apparaat`
+
+
 ## Container Management System Software
 
 ![CMS visualisatie](/democrane/images/democrane-cms1.png)
